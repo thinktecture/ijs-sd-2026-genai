@@ -1,0 +1,36 @@
+<!-- LAB #2 -->
+@if(false) {
+  <mat-progress-bar mode="determinate" [value]="0"></mat-progress-bar>
+}
+
+<mat-selection-list>
+  <!-- LAB #4, #5 -->
+</mat-selection-list>
+
+<!-- LAB #3 -->
+<pre></pre>
+
+<div class="container">
+  <mat-form-field style="width: 170px">
+    <mat-label>Inference Engine</mat-label>
+    <select matNativeControl #langModel>
+      <option value="transformers-js" selected>Transformers.js</option>
+      <option value="prompt-api">Prompt API</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field class="prompt">
+    <mat-label>Prompt</mat-label>
+    <input matInput placeholder="Prompt" #prompt>
+  </mat-form-field>
+
+  <!-- LAB #2 -->
+  <button mat-raised-button (click)="runPrompt(prompt.value, langModel.value)" [disabled]="true">
+    <mat-icon>send</mat-icon>
+    Ask
+  </button>
+</div>
+
+<button mat-fab (click)="addTodo()">
+  <mat-icon>add</mat-icon>
+</button>
