@@ -4,7 +4,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": ["dom-chromium-ai"]
   },
   "include": [
     "src/**/*.ts"
