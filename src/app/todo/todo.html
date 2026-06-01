@@ -6,7 +6,9 @@
 <mat-selection-list>
   <!-- LAB #4, #5 -->
     @for (todo of todos(); track $index) {
-      <mat-list-option>{{ todo.text }}</mat-list-option>
+      <mat-list-option [(selected)]="todo.done">
+        {{ todo.text }}
+      </mat-list-option>
     }
 </mat-selection-list>
 
