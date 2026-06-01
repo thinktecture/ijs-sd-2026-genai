@@ -55,7 +55,9 @@ export class Todo implements OnInit {
     // LAB #3, #6, #7, #8, #9
     this.llmService.clearPastKeyValues();
 
+    const systemPrompt = `Here's the user's todo list: ${JSON.stringify(this.todos())}`;
     const messages = [
+      { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ];
 
