@@ -21,7 +21,7 @@ export class Form {
     const languageModel = await LanguageModel.create({
       initialPrompts: [{
         role: 'system',
-        content: `Extract the information to a JSON object of this shape: ${JSON.stringify(this.formGroup.value)}`,
+        content: `Extract the information.`,
       }],
     });
     const result = await languageModel.prompt(value, {
@@ -33,7 +33,7 @@ export class Form {
         },
       },
     });
-    console.log(result);
+    this.formGroup.setValue(JSON.parse(result));
   }
 
   async paste() {
