@@ -1,6 +1,7 @@
 <!-- LAB #13, #14 -->
 <input type="text" #form>
 <button (click)="fillForm(form.value)">Fill form</button>
+<button (click)="paste()">Paste</button>
 <form [formGroup]="formGroup">
     <input placeholder="Name" formControlName="name">
     <input placeholder="City" formControlName="city">

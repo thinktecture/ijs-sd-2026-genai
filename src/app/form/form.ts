@@ -18,4 +18,9 @@ export class Form {
   });
 
   async fillForm(value: string) {}
+
+  async paste() {
+    const content = await navigator.clipboard.readText();
+    await this.fillForm(content);
+  }
 }
