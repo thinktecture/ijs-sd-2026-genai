@@ -65,7 +65,9 @@ Here's the user's todo list: ${JSON.stringify(this.todos())}`;
       { role: "user", content: userPrompt },
     ];
 
-    return this.llmService.generateResponse(messages, []);
+    return this.llmService.generateResponse(messages, [], {
+      measurePerformance: true,
+    });
   }
 
   async* inferPromptApi(userPrompt: string): AsyncGenerator<string> {
