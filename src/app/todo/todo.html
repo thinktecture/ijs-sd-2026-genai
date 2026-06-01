@@ -1,6 +1,6 @@
 <!-- LAB #2 -->
-@if(false) {
-  <mat-progress-bar mode="determinate" [value]="0"></mat-progress-bar>
+@if(!llmService.isReady()) {
+  <mat-progress-bar mode="determinate" [value]="llmService.progress()"></mat-progress-bar>
 }
 
 <mat-selection-list>
@@ -8,7 +8,7 @@
 </mat-selection-list>
 
 <!-- LAB #3 -->
-<pre></pre>
+<pre>{{ reply() }}</pre>
 
 <div class="container">
   <mat-form-field style="width: 170px">
@@ -25,7 +25,7 @@
   </mat-form-field>
 
   <!-- LAB #2 -->
-  <button mat-raised-button (click)="runPrompt(prompt.value, langModel.value)" [disabled]="true">
+  <button mat-raised-button (click)="runPrompt(prompt.value, langModel.value)" [disabled]="!llmService.isReady()">
     <mat-icon>send</mat-icon>
     Ask
   </button>
